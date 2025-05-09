@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 id="hoverHeading">Hover Over Me!</h1>
+
+    <script>
+
+        const heading = document.getElementById('hoverHeading');
+
+        heading.addEventListener('mouseover', function() {
+
+            heading.style.color = 'blue';
+
+            heading.style.cursor = 'pointer';
+
+        });
+
+        heading.addEventListener('mouseout', function() {
+
+            heading.style.color = 'black';
+
+        });
+
+    </script> 
+    <h2>Please enter the password:</h2>
+
+    <input type="password" id="passwordInput" placeholder="Password">
+
+    <button onclick="checkPassword()">Submit</button>
+
+    <p id="message"></p>
+
+    <script>
+
+        function checkPassword() {
+
+            const correctPassword = 'secret123'; // Set your password here
+
+            const userPassword = document.getElementById('passwordInput').value;
+
+            const message = document.getElementById('message');
+
+            if (userPassword === correctPassword) {
+
+                message.style.color = 'green';
+
+                message.textContent = 'Access granted!';
+
+                // Additional actions can be added here, like redirecting
+
+            } else {
+
+                message.style.color = 'red';
+
+                message.textContent = 'Incorrect password. Try again.';
+
+            }
+
+        }
+
+    </script> 
+    
+<h2>Demo JavaScript in Head</h2>
+<script src="script.js"></script>
+
+<p id="demo">A Paragraph</p>
+<p id="mybutton">click</p>
+<button type="button" onclick="myFunction()">Try it</button>
+
+<button onclick="alert('Button clicked!')">Click Me</button>
+<p id="toggleText">This text will be hidden or shown when you click the button.</p>
+
+
+<form id="myForm">
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    <button type="submit">Submit</button>
+    <p id="errorMessage" style="color: red;"></p>
+  </form>
+  <script>
+    const form = document.getElementById("myForm");
+    const email = document.getElementById("email");
+    const errorMessage = document.getElementById("errorMessage");
+  
+    form.onsubmit = function (e) {
+      if (!email.value) {
+        e.preventDefault(); // Prevent form submission
+        errorMessage.textContent = "Email is required!";
+      }
+    };
+  </script>
+  
+
+</body>
+</html>
